@@ -1,0 +1,13 @@
+.btnclr{
+  color: black;
+  background-color: yellow;
+}
+.cnttr{
+display: flex;
+justify-content: center;
+}
+
+.hyhd{
+  display: flex;
+  float: right;
+}

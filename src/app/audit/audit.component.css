@@ -1,0 +1,90 @@
+.position-fixed{
+    position: fixed;
+    background-color: yellow;
+  }
+
+  .icnend{
+    float:right;
+    cursor: pointer;
+  }
+
+  .dvwdth{
+    width:100%;
+  }
+
+  .clrbtn{
+    color: yellow;
+    background-color: black;
+  }
+
+  .btncss{
+   padding-top: 10%;
+   display: flex;
+   justify-content:flex-end;
+  }
+
+  .fgtre{
+    position: absolute;
+    left: -26px;
+}
+.hjdhfdjf{
+    padding-top: 9px;
+    display: flex;
+    justify-content: center;
+}
+/* //////////////////////////  table css  ////////////////////// */
+
+   
+#deatils td,
+#deatils th {
+    /* border: 1px solid #ddd; */
+    border-bottom:1px solid #0000003d ;
+    padding: 8px;
+}
+
+
+/* #deatils tr:hover {
+    background-color:  rgba(94, 92, 92, 0);
+} */
+
+#deatils th {
+    color: white;
+}
+
+
+tbody {
+    overflow: auto;
+}
+
+thead,
+tbody tr {
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+.tb-row{
+    /* background-color: red; */
+    border-bottom:1px solid #0000003d ;
+    height: 63px;
+}
+
+.trhythyt{
+    width: 95%;
+    margin-left: 24px;
+}
+/* //////////////////////////////////////////////// */
+.brtytr{
+    width: 25%;
+    text-align: center;
+}
+
+
+
+.dsdfhksjaf{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+        bottom: 11px;
+        right: 22px;
+    }

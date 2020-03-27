@@ -1,0 +1,67 @@
+<ng-container *ngIf="dialogdata.type === 'newComplain'">
+<form [formGroup]="complainform" (ngSubmit)="complainForm()">
+    <div class="hyhd">
+        <button [mat-dialog-close]="'Yes'"  mat-icon-button type="button"><mat-icon>highlight_off</mat-icon></button>
+    </div>
+     <div>  
+    <mat-form-field class="widthformfield">
+        <input type="text" matInput placeholder="Vehicle Name" formControlName="vname" (keydown)="_handleKeydown($event)">
+       <mat-error *ngIf="formControls?.vname?.errors">
+         <span *ngIf="formControls?.vname?.errors?.required">
+         Vehicle Name is Required !!!
+         </span>
+         <span *ngIf="formControls?.vname?.errors?.pattern">
+           Invalid Vehicle Name !!!
+         </span>
+       </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>  
+      <mat-form-field class="widthformfield">
+        <input type="text" matInput placeholder="Vehicle Number" formControlName="vnumb"  (keydown)="_handleKeydown($event)">
+       <mat-error *ngIf="formControls?.vnumb?.errors">
+         <span *ngIf="formControls?.vnumb?.errors?.required">
+         Vehicle Number is Required !!!
+         </span>
+         <span *ngIf="formControls?.vnumb?.errors?.pattern">
+           Invalid Vehicle Number !!!
+         </span>
+       </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>  
+      <mat-form-field class="widthformfield">
+        <input type="text" matInput placeholder="Pancard" formControlName="pan"  (keydown)="_handleKeydown($event)">
+       <mat-error *ngIf="formControls?.pan?.errors">
+         <span *ngIf="formControls?.pan?.errors?.required">
+            pan Identity is Required !!!
+         </span>
+         <span *ngIf="formControls?.pan?.errors?.pattern">
+           Invalid pan Identity!!!
+         </span>
+       </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>  
+      <mat-form-field class="widthformfield">
+        <input type="text" matInput placeholder="Chasis Number" formControlName="chasis"  (keydown)="_handleKeydown($event)">
+       <mat-error *ngIf="formControls?.chasis?.errors">
+         <span *ngIf="formControls?.chasis?.errors?.required">
+         Chasis Number is Required !!!
+         </span>
+         <span *ngIf="formControls?.chasis?.errors?.pattern">
+           Invalid Chasis Number !!!
+         </span>
+       </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="cnttr">
+     <button mat-raised-button class="btnclr" type="submit">Submit</button>
+    </div>
+</form>
+</ng-container>
+

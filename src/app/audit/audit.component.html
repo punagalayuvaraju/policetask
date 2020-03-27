@@ -1,0 +1,80 @@
+<mat-toolbar  class="position-fixed">
+    <div class="dvwdth">
+        <span> Dashboard >> {{userinfo?.firstname}} >> Complaints </span>
+        <span (click)="logout($event)" class="icnend"><mat-icon>input</mat-icon></span>
+    </div>
+    </mat-toolbar>
+
+    <div class="btncss" >
+        <button *ngIf="userinfo?.userrole === 'user'" (click)="raisecomplaint()" class="clrbtn" small mat-raised-button type="button" >New Complaint</button>
+    </div>
+
+
+    <div class="hjdhfdjf" style="padding-top: 9px;" *ngIf="allusers?.length">
+        <span style="position: relative;" >
+            <img src="assets/search.png" class="fgtre">
+            <input (keydown)="_handleKeydown($event)" class="wyuerh" type="search" placeholder="Search Content" name="wrkspcsearch" [(ngModel)]="wrkspcsearch"></span>
+    </div>
+
+    <div>
+
+        <mat-card class="wfrwewe" *ngIf="(allusers | filter : wrkspcsearch : ['vname']:'vname')?.length">
+            <div class="row" style="width: -webkit-fill-available;height: 97%;">
+               <table   class="trhythyt">
+                   <thead>
+                   <tr class="tb-row">
+                       <th class="nbnhn"><span class="fntSyl">Vehicle Name</span></th>
+                       <th class="nbnhn"><span class="fntSyl">Vehicle Number</span></th>
+                       <th class="nbnhn"><span class="fntSyl">Created At</span></th>
+                       <th class="nbnhn"><span class="fntSyl">chasis No.</span></th>
+                       <th class="nbnhn"><span class="fntSyl">Status</span></th>
+                       <th *ngIf="userinfo?.userrole === 'police'" class="nbnhn"><span class="fntSyl">Update</span></th>
+                   </tr>
+                   </thead>
+               <tbody id="deatils">
+                   <tr  class="tb-row hovera" *ngFor="let i of allusers | filter : wrkspcsearch : ['vname']:'vname'">
+                       <td class="brtytr"><span>{{i?.vname ? i?.vname : '---'}}</span></td>
+                       <td class="brtytr">{{i?.vnumb ? i?.vnumb : '---'}}</td>
+                       <td class="brtytr">{{i?.created_on ? i?.created_on : '---'}}</td>
+                       <td class="brtytr">{{i?.chasis ? i?.chasis : '---'}}</td>
+                       <td class="brtytr">{{i?.status ? i?.status : '---'}}</td>
+                    <td (click)="updatecase(i)" *ngIf="userinfo?.userrole === 'police' && i?.status === 'pending'"><button style="cursor: pointer;" type="button">Resolve</button></td>
+                    <td  *ngIf="userinfo?.userrole === 'police' && i?.status === 'Resolved'"><button style="cursor: pointer;" type="button">No updates</button></td>
+
+                   </tr>
+   
+               </tbody>
+               </table>
+           </div>
+   
+           
+           
+           <!-- <div class="dsdfhksjaf" >
+            <span *ngIf="start > 4" class="ghtyrytr" (click)="previous10Records()"> 
+                <button class="clrbtn" ><< Previous</button>
+            </span>
+            <span *ngIf="start > 4" class="ergsfdsd">|</span>
+            <span *ngIf="allusers?.length === 5" class="ergsfdsd ghtyrytr" (click)="next10Records()">
+                <button class="clrbtn">Next >></button>
+            </span>
+        </div> -->
+           </mat-card>
+
+           <mat-card class="wfrwewe" *ngIf="!allusers?.length"> 
+          
+            <img style="padding-top: 77px;width: inherit;height:inherit;" src="assets/no-data-to-show.png">
+  
+            <!-- <div class="dsdfhksjaf" *ngIf="start > 4">
+              <span class="ghtyrytr" (click)="previous10Records()">
+                  <button class="clrbtn"><< Previous</button>
+              </span>
+           </div> -->
+          </mat-card>
+
+           <mat-card class="wfrwewe" *ngIf="!(allusers | filter : wrkspcsearch : ['vname']:'vname')?.length && allusers && allusers.length"> 
+          
+            <div class="fgyrtht">
+                <img height="60%" width="60%" class="iyuiuu" src="assets\no-data-to-show.png">
+            </div>
+        </mat-card>
+    </div>

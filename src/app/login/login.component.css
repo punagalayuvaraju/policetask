@@ -1,0 +1,78 @@
+.registerbtn{
+    color: black;
+    background-color:yellow;
+    }
+    .loginbtn{
+        color: yellow;
+        background-color:black; 
+    }
+    .wholeForm{
+        display: flex;
+        width: 100%;
+        height:100%
+        }
+    
+        .section1{
+         width:50%
+        }
+    
+        .section2{
+            width:50%;
+        }
+    
+        .centertitle{
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+        }
+    
+       .imgpadding{
+           padding-top: 64px;
+       }
+    
+        .formpadding{
+            padding-top:45%;
+        } 
+    
+        .widthformfield{
+            width: 70%;
+        }
+    
+        .pdngtp{
+            padding-top: 24px;
+        }
+    
+         .padleft{
+        float: right;
+         }
+    
+         .tnxxxwtt{
+             cursor: pointer;
+         }
+    
+         .erroricon{
+             position:relative;
+         }
+         .erroriconarrng{
+            position: absolute;
+            top: -12px;
+            right: 1px;
+         }
+         .position-fixed{
+            position: fixed;
+            background-color: yellow;
+          }
+          .dvwdth{
+            width:100%;
+          }
+          .icnend{
+    float:right;
+    cursor: pointer;
+  }
+  .clr{
+      float: right;
+      cursor: pointer;
+  }
+  .padtp{
+      padding-top: 19px;
+  }
